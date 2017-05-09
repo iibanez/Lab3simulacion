@@ -29,20 +29,20 @@ pause;
 %clf();
 
 %transformar a forma discreta
-[numd2, dend2] = c2dm(numc, denc, 0.05, 'zoh');
+[numd2, dend2] = c2dm(numc, denc, 0.08, 'zoh');
 
 %construir los puntos
-[y1] = dstep(numd2, dend2, 1000+1);
-x1 = 0:0.05:0.05*1000;
+[y1] = dstep(numd2, dend2, 625+1);
+x1 = 0:0.08:0.08*625;
 
 %graficar sistema discreto 1
-createfigure1(x1,y1,'Sistema discreto 2 muestreo = 0.05', 2);
+createfigure1(x1,y1,'Sistema discreto 2 muestreo = 0.08', 2);
 pause;
 %clf();
 
 
 %transfromar de discreta a continua
-[numc1, denc1] = d2cm(numd1, dend1, 0.08, 'zoh');
+[numc1, denc1] = d2cm(numd2, dend2, 0.08, 'zoh');
 
 %graficar sistema discreto 1
 sistc = tf(numc1, denc1);
